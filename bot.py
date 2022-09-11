@@ -29,14 +29,18 @@ def greer_user(update,context):
     # print('Пользователь нажал /start: '+update['message']['date']+': '+update['message']['chat'])
 
     # вывели сообщение пользователю в telegram-чат
-    update.message.reply_text('Привет!!! Вы запустили мой телеграмм ботик!!!! Напишите что-нибудь в чат')
+    update.message.reply_text('Привет!!! Вы запустили мой телеграмм ботик!!!! \nКак тебя зовут?')
 
 
 def talk_with_me (update, context):
     text_from_user = update.message.text
     text_to_user = text_from_user
     print(text_to_user)
-    update.message.reply_text('Вы написали мне вот это: '+text_to_user)
+    update.message.reply_text(
+        'Привет, '+text_to_user+'!!!'
+        +'\nА меня зовут ТэБоттик :)'
+        +'\nПока это все что я умею...'
+        )
 
 # здесь будет лежать тело бота
 def main():
